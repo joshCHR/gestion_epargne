@@ -1,0 +1,312 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AF348591-3BD1-492A-85FD-55DD476107AB}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>ADTMPDapk</RootNamespace>
+    <AssemblyName>ADTMPDapk</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.52">
+      <HintPath>E:\Dll\Bunifu_UI_v1.52.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Guna.UI">
+      <HintPath>..\..\..\framework desk\Guna.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="Guna.UI2">
+      <HintPath>..\..\..\..\Guna.UI2.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework">
+      <HintPath>E:\Dll\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\clsMembre.cs" />
+    <Compile Include="db_adtmpdDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>db_adtmpdDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Handlers\Datalib.cs" />
+    <Compile Include="Handlers\Notifier.cs" />
+    <Compile Include="Handlers\Params.cs" />
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Membre.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Forms\dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\dashboard.Designer.cs">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_emprunt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_emprunt.Designer.cs">
+      <DependentUpon>frm_emprunt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_epargne.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_epargne.Designer.cs">
+      <DependentUpon>frm_epargne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_membre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_membre.Designer.cs">
+      <DependentUpon>frm_membre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_remboursement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_remboursement.Designer.cs">
+      <DependentUpon>frm_remboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_typemembre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_typemembre.Designer.cs">
+      <DependentUpon>frm_typemembre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_dashoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_dashoard.Designer.cs">
+      <DependentUpon>uc_dashoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_emprunt.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_emprunt.Designer.cs">
+      <DependentUpon>uc_emprunt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_epargne.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_epargne.Designer.cs">
+      <DependentUpon>uc_epargne.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_membre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_membre.Designer.cs">
+      <DependentUpon>uc_membre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_paramettre.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_paramettre.Designer.cs">
+      <DependentUpon>uc_paramettre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_remboursement.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_remboursement.Designer.cs">
+      <DependentUpon>uc_remboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_setting.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_setting.Designer.cs">
+      <DependentUpon>uc_setting.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Views\Forms\dashboard.resx">
+      <DependentUpon>dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_emprunt.resx">
+      <DependentUpon>frm_emprunt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_epargne.resx">
+      <DependentUpon>frm_epargne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_membre.resx">
+      <DependentUpon>frm_membre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_remboursement.resx">
+      <DependentUpon>frm_remboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_typemembre.resx">
+      <DependentUpon>frm_typemembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_dashoard.resx">
+      <DependentUpon>uc_dashoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_emprunt.resx">
+      <DependentUpon>uc_emprunt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_epargne.resx">
+      <DependentUpon>uc_epargne.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_membre.resx">
+      <DependentUpon>uc_membre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_paramettre.resx">
+      <DependentUpon>uc_paramettre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_remboursement.resx">
+      <DependentUpon>uc_remboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_setting.resx">
+      <DependentUpon>uc_setting.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Database\Database.sql" />
+    <Content Include="db_adtmpd_script.sql" />
+    <None Include="Resources\ad_96px1.png" />
+    <None Include="Resources\user_96px.png" />
+    <None Include="Resources\services_96px.png" />
+    <None Include="Resources\gear_96px.png" />
+    <None Include="Resources\cash_in_h_96px.png" />
+    <None Include="Resources\capital_96px.png" />
+    <None Include="Resources\sustainability_96px.png" />
+    <None Include="Resources\hom_96px.png" />
+    <None Include="Resources\fill_money_96px.png" />
+    <None Include="Resources\fill_money_box_96px1.png" />
+    <None Include="Resources\managemen_96px.png" />
+    <None Include="Resources\decrease_96px.png" />
+    <None Include="db_adtmpdDataSet.xsc">
+      <DependentUpon>db_adtmpdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="db_adtmpdDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>db_adtmpdDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="db_adtmpdDataSet.xss">
+      <DependentUpon>db_adtmpdDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\image24px.png" />
+    <None Include="Resources\image_gallery_24px.png" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Resources\update_left_rotation_96px1.png" />
+    <None Include="Resources\update_left_rotation_96px.png" />
+    <None Include="Resources\search_32px.png" />
+    <None Include="Resources\ad_96px.png" />
+    <None Include="Resources\add_32px.png" />
+    <None Include="Resources\fill_money_box_96px.png" />
+    <None Include="Resources\manage_96px.png" />
+    <None Include="Resources\chart_96px.png" />
+    <None Include="Resources\homee_96px.png" />
+    <None Include="Resources\subtract_96px.png" />
+    <None Include="Resources\merge_horizontal_96px.png" />
+    <None Include="Resources\close_window_96px.png" />
+    <None Include="Resources\home_96px.png" />
+    <None Include="Resources\_folder_96px.png" />
+    <None Include="Resources\opened_folder_96px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 et x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
