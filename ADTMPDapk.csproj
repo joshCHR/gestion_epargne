@@ -8,7 +8,7 @@
     <OutputType>WinExe</OutputType>
     <RootNamespace>ADTMPDapk</RootNamespace>
     <AssemblyName>ADTMPDapk</AssemblyName>
-    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
@@ -27,6 +27,7 @@
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -48,6 +49,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Accessibility" />
     <Reference Include="Bunifu_UI_v1.52">
       <HintPath>E:\Dll\Bunifu_UI_v1.52.dll</HintPath>
     </Reference>
@@ -55,6 +57,25 @@
     <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Charts.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Office.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Pdf.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Printing.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.RichEdit.v21.2.Export, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Sparkline.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Utils.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v21.2.UI, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraBars.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraCharts.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraEditors.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v21.2.Core, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraPrinting.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v21.2, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraReports.v21.2.Extensions, Version=21.2.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
     <Reference Include="Guna.UI">
       <HintPath>..\..\..\framework desk\Guna.UI.dll</HintPath>
     </Reference>
@@ -70,7 +91,11 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Design" />
     <Reference Include="System.DirectoryServices" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.IO.Log" />
     <Reference Include="System.Management" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Services" />
@@ -85,15 +110,36 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\clsAdhesion.cs" />
+    <Compile Include="Controllers\clsEpargne.cs" />
+    <Compile Include="Controllers\clsEtat_financier.cs" />
     <Compile Include="Controllers\clsMembre.cs" />
+    <Compile Include="Controllers\clsPret.cs" />
+    <Compile Include="Controllers\clsRemboursement.cs" />
+    <Compile Include="Controllers\clsRestituer.cs" />
+    <Compile Include="Controllers\clsTypeMembre.cs" />
+    <Compile Include="Controllers\clsUser.cs" />
     <Compile Include="db_adtmpdDataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>db_adtmpdDataSet.xsd</DependentUpon>
     </Compile>
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
     <Compile Include="Handlers\Datalib.cs" />
     <Compile Include="Handlers\Notifier.cs" />
     <Compile Include="Handlers\Params.cs" />
+    <Compile Include="Models\Adhesion.cs" />
+    <Compile Include="Models\Epargne.cs" />
+    <Compile Include="Models\Pret.cs" />
+    <Compile Include="Models\Remboursement.cs" />
+    <Compile Include="Models\Resititution.cs" />
+    <Compile Include="Models\Type_membre.cs" />
+    <Compile Include="Models\User.cs" />
     <Compile Include="Properties\Settings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
@@ -102,17 +148,77 @@
     <Compile Include="Models\Membre.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Rapports\Bon_entrerCaisse.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Bon_entrerCaisse.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rapports\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapports\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapports\frm_bonEntrer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapports\frm_bonEntrer.Designer.cs">
+      <DependentUpon>frm_bonEntrer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapports\frm_listeMembre.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapports\frm_listeMembre.Designer.cs">
+      <DependentUpon>frm_listeMembre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapports\frm_Rapport_restitution.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Rapports\frm_Rapport_restitution.Designer.cs">
+      <DependentUpon>frm_Rapport_restitution.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Rapports\listeMembre1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>listeMembre1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rapports\Plan_remboursement.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Plan_remboursement.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rapports\fiche_remboursement_journalier1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>fiche_remboursement_journalier1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Rapports\Restitution1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Restitution1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Views\Forms\dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Forms\dashboard.Designer.cs">
       <DependentUpon>dashboard.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\Forms\Form1.cs">
+    <Compile Include="Views\Forms\frm_login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Views\Forms\Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Views\Forms\frm_login.Designer.cs">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_adhesion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_adhesion.Designer.cs">
+      <DependentUpon>frm_adhesion.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\Forms\frm_emprunt.cs">
       <SubType>Form</SubType>
@@ -138,11 +244,23 @@
     <Compile Include="Views\Forms\frm_remboursement.Designer.cs">
       <DependentUpon>frm_remboursement.cs</DependentUpon>
     </Compile>
+    <Compile Include="Views\Forms\frm_restituer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_restituer.Designer.cs">
+      <DependentUpon>frm_restituer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Views\Forms\frm_typemembre.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Views\Forms\frm_typemembre.Designer.cs">
       <DependentUpon>frm_typemembre.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Forms\frm_user.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Views\Forms\frm_user.Designer.cs">
+      <DependentUpon>frm_user.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\uc_dashoard.cs">
       <SubType>UserControl</SubType>
@@ -168,17 +286,17 @@
     <Compile Include="Views\UserControls\uc_membre.Designer.cs">
       <DependentUpon>uc_membre.cs</DependentUpon>
     </Compile>
-    <Compile Include="Views\UserControls\uc_paramettre.cs">
-      <SubType>UserControl</SubType>
-    </Compile>
-    <Compile Include="Views\UserControls\uc_paramettre.Designer.cs">
-      <DependentUpon>uc_paramettre.cs</DependentUpon>
-    </Compile>
     <Compile Include="Views\UserControls\uc_remboursement.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Views\UserControls\uc_remboursement.Designer.cs">
       <DependentUpon>uc_remboursement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_restitution.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Views\UserControls\uc_restitution.Designer.cs">
+      <DependentUpon>uc_restitution.cs</DependentUpon>
     </Compile>
     <Compile Include="Views\UserControls\uc_setting.cs">
       <SubType>UserControl</SubType>
@@ -186,6 +304,9 @@
     <Compile Include="Views\UserControls\uc_setting.Designer.cs">
       <DependentUpon>uc_setting.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -196,11 +317,46 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Rapports\Bon_entrerCaisse.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Bon_entrerCaisse.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\frm_bonEntrer.resx">
+      <DependentUpon>frm_bonEntrer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\frm_listeMembre.resx">
+      <DependentUpon>frm_listeMembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\frm_Rapport_restitution.resx">
+      <DependentUpon>frm_Rapport_restitution.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\listeMembre1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>listeMembre1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\Plan_remboursement.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Plan_remboursement.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\fiche_remboursement_journalier1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>fiche_remboursement_journalier1.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Rapports\Restitution1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Restitution1.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\dashboard.resx">
       <DependentUpon>dashboard.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\Forms\Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Views\Forms\frm_login.resx">
+      <DependentUpon>frm_login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_adhesion.resx">
+      <DependentUpon>frm_adhesion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\frm_emprunt.resx">
       <DependentUpon>frm_emprunt.cs</DependentUpon>
@@ -214,8 +370,14 @@
     <EmbeddedResource Include="Views\Forms\frm_remboursement.resx">
       <DependentUpon>frm_remboursement.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_restituer.resx">
+      <DependentUpon>frm_restituer.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Views\Forms\frm_typemembre.resx">
       <DependentUpon>frm_typemembre.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\Forms\frm_user.resx">
+      <DependentUpon>frm_user.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\uc_dashoard.resx">
       <DependentUpon>uc_dashoard.cs</DependentUpon>
@@ -229,11 +391,11 @@
     <EmbeddedResource Include="Views\UserControls\uc_membre.resx">
       <DependentUpon>uc_membre.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Views\UserControls\uc_paramettre.resx">
-      <DependentUpon>uc_paramettre.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\uc_remboursement.resx">
       <DependentUpon>uc_remboursement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Views\UserControls\uc_restitution.resx">
+      <DependentUpon>uc_restitution.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Views\UserControls\uc_setting.resx">
       <DependentUpon>uc_setting.cs</DependentUpon>
@@ -246,8 +408,25 @@
     <WCFMetadata Include="Connected Services\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Database\Database.sql" />
+    <Content Include="Database\databaseAdtmpd.sql" />
     <Content Include="db_adtmpd_script.sql" />
+    <None Include="Resources\receipt_96px.png" />
+    <None Include="Resources\logo.jpg" />
+    <None Include="Resources\user_96pxee.png" />
+    <None Include="Resources\key_96px.png" />
+    <None Include="Resources\left_96pxEEE.png" />
+    <None Include="Resources\male_user_96pxeee.png" />
+    <None Include="README.md" />
+    <None Include="Resources\road_construction_96px.png" />
+    <None Include="Resources\upload_to_cloud_30px.png" />
+    <None Include="Resources\holding_hand_96px.png" />
+    <None Include="Resources\microsoft_excel_96px.png" />
+    <None Include="Resources\print_96px.png" />
+    <None Include="Resources\delete_30px.png" />
+    <None Include="Resources\20pxblan.png" />
+    <None Include="Resources\about.jpg" />
+    <None Include="Resources\about-us-image.jpg" />
+    <None Include="Resources\banner-right.png" />
     <None Include="Resources\ad_96px1.png" />
     <None Include="Resources\user_96px.png" />
     <None Include="Resources\services_96px.png" />
@@ -308,5 +487,6 @@
   <ItemGroup>
     <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

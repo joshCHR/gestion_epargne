@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ADTMPDapk.Views.Forms;
+using System;
 using System.Windows.Forms;
 
 namespace ADTMPDapk
@@ -13,7 +14,7 @@ namespace ADTMPDapk
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new dashboard());
+            Application.Run(new frm_login());
         }
     }
 }

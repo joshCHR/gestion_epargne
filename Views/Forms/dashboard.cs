@@ -9,15 +9,33 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ADTMPDapk.Views.UserControls;
 using BunifuAnimatorNS;
-
+using ADTMPDapk.Views.Forms;
 
 namespace ADTMPDapk
 {
     public partial class dashboard : Form
     {
-        public dashboard()
+        ToolTip ToolTip = new ToolTip();
+        public static string _en_ligne;
+        public dashboard(string en_ligne)
         {
             InitializeComponent();
+            ToolTip.SetToolTip(btnhomeretour, "Home");
+            ToolTip.SetToolTip(btngrandure, "Grandir"); 
+            ToolTip.SetToolTip(btnreduire, "Reduire");
+            ToolTip.SetToolTip(btmfermer, "Fermer");
+            ToolTip.SetToolTip(btndashboard, "Dashboard");
+            ToolTip.SetToolTip(btnmembre, "Membre");
+            ToolTip.SetToolTip(btnemprunt, "Emprunt");
+            ToolTip.SetToolTip(btnepargne, "Epargne");
+            ToolTip.SetToolTip(btnremboursement, "Remboursement");
+            ToolTip.SetToolTip(btnsetting, "Setting");
+            ToolTip.SetToolTip(btnparamettre, "Paramèttre");
+            ToolTip.SetToolTip(btnrestitution, "Restitution");
+            ToolTip.SetToolTip(btnSinup, "Se connecter");
+
+            _en_ligne = en_ligne;
+
         }
 
         
@@ -76,7 +94,7 @@ namespace ADTMPDapk
 
         private void bunifuImageButton1_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "dashboard";
+            labeltitre.Text = "EpargneSystem-dashboard";
             var fr = new uc_dashoard()
             {
                 Size = panel_control.Size
@@ -88,14 +106,17 @@ namespace ADTMPDapk
             bunifuTransition1.ShowSync(fr);
             fr.Visible = true;
         }
+       
 
         private void btnmembre_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Membres";
+            
+            labeltitre.Text = "EpargneSystem-Membres";
             var fr = new uc_membre()
             {
                 Size = panel_control.Size
             };
+            fr.label1.Text = ("Membre");
             panel_control.Controls.Clear();
             panel_control.Controls.Add(fr);
             fr.Visible = false;
@@ -106,7 +127,7 @@ namespace ADTMPDapk
 
         private void bunifuImageButton5_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Emprunt";
+            labeltitre.Text = "EpargneSystem-Emprunt";
             var fr = new uc_emprunt()
             {
                 Size = panel_control.Size
@@ -121,7 +142,7 @@ namespace ADTMPDapk
 
         private void bunifuImageButton4_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Setting";
+            labeltitre.Text = "EpargneSystem-Setting";
             var fr = new uc_setting()
             {
                 Size = panel_control.Size
@@ -136,7 +157,7 @@ namespace ADTMPDapk
 
         private void btnepargne_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Epargne";
+            labeltitre.Text = "EpargneSystem-Epargne";
             var fr = new uc_epargne()
             {
                 Size = panel_control.Size
@@ -151,7 +172,7 @@ namespace ADTMPDapk
 
         private void btnremboursement_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Remboursement";
+            labeltitre.Text = "EpargneSystem-Remboursement";
             var fr = new uc_remboursement()
             {
                 Size = panel_control.Size
@@ -166,8 +187,28 @@ namespace ADTMPDapk
 
         private void btnparamettre_Click(object sender, EventArgs e)
         {
-            labeltitre.Text = "Parametre";
-            var fr = new uc_paramettre()
+            //labeltitre.Text = "EpargneSystem-Parametre";
+            //var fr = new uc_paramettre()
+            //{
+            //    Size = panel_control.Size
+            //};
+            //panel_control.Controls.Clear();
+            //panel_control.Controls.Add(fr);
+            //fr.Visible = false;
+            //bunifuTransition1.AnimationType = AnimationType.Custom;
+            //bunifuTransition1.ShowSync(fr);
+            //fr.Visible = true;
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnrestitution_Click(object sender, EventArgs e)
+        {
+            labeltitre.Text = "EpargneSystem-Restitution";
+            var fr = new uc_restitution()
             {
                 Size = panel_control.Size
             };
@@ -177,6 +218,25 @@ namespace ADTMPDapk
             bunifuTransition1.AnimationType = AnimationType.Custom;
             bunifuTransition1.ShowSync(fr);
             fr.Visible = true;
+        }
+
+        private void dashboard_Load(object sender, EventArgs e)
+        {
+            
+        }
+
+       
+
+        private void btnSinup_Click(object sender, EventArgs e)
+        {
+            var frm = new frm_login();
+            frm.ShowDialog();
+
+        }
+
+        private void btnreduire_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
         }
     }
 }

@@ -30,26 +30,48 @@ namespace ADTMPDapk
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtid = new Guna.UI2.WinForms.Guna2TextBox();
             this.labellieuNaiss = new System.Windows.Forms.Label();
-            this.labelsexe = new System.Windows.Forms.Label();
             this.txtdesignation = new Guna.UI2.WinForms.Guna2TextBox();
-            this.cmbtypemembre = new Guna.UI2.WinForms.Guna2ComboBox();
-            this.bunifuImageButton1 = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnactualiser = new Bunifu.Framework.UI.BunifuImageButton();
+            this.btnenregistrer = new Guna.UI.WinForms.GunaButton();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnactualiser)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.txtid);
             this.panel1.Controls.Add(this.labellieuNaiss);
-            this.panel1.Controls.Add(this.labelsexe);
             this.panel1.Controls.Add(this.txtdesignation);
-            this.panel1.Controls.Add(this.cmbtypemembre);
             this.panel1.Location = new System.Drawing.Point(12, 42);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(470, 146);
             this.panel1.TabIndex = 42;
+            // 
+            // txtid
+            // 
+            this.txtid.Anchor = System.Windows.Forms.AnchorStyles.Right;
+            this.txtid.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
+            this.txtid.Cursor = System.Windows.Forms.Cursors.IBeam;
+            this.txtid.DefaultText = "";
+            this.txtid.DisabledState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(208)))), ((int)(((byte)(208)))), ((int)(((byte)(208)))));
+            this.txtid.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(226)))), ((int)(((byte)(226)))), ((int)(((byte)(226)))));
+            this.txtid.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtid.DisabledState.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(138)))), ((int)(((byte)(138)))), ((int)(((byte)(138)))));
+            this.txtid.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtid.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.txtid.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
+            this.txtid.Location = new System.Drawing.Point(64, 22);
+            this.txtid.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.txtid.Name = "txtid";
+            this.txtid.PasswordChar = '\0';
+            this.txtid.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
+            this.txtid.PlaceholderText = "ID";
+            this.txtid.SelectedText = "";
+            this.txtid.Size = new System.Drawing.Size(125, 29);
+            this.txtid.TabIndex = 46;
             // 
             // labellieuNaiss
             // 
@@ -58,24 +80,12 @@ namespace ADTMPDapk
             | System.Windows.Forms.AnchorStyles.Right)));
             this.labellieuNaiss.AutoSize = true;
             this.labellieuNaiss.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
-            this.labellieuNaiss.Location = new System.Drawing.Point(96, 73);
+            this.labellieuNaiss.Location = new System.Drawing.Point(60, 56);
             this.labellieuNaiss.Name = "labellieuNaiss";
             this.labellieuNaiss.Size = new System.Drawing.Size(89, 20);
             this.labellieuNaiss.TabIndex = 45;
             this.labellieuNaiss.Text = "Designation";
-            // 
-            // labelsexe
-            // 
-            this.labelsexe.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.labelsexe.AutoSize = true;
-            this.labelsexe.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
-            this.labelsexe.Location = new System.Drawing.Point(94, 8);
-            this.labelsexe.Name = "labelsexe";
-            this.labelsexe.Size = new System.Drawing.Size(65, 20);
-            this.labelsexe.TabIndex = 44;
-            this.labelsexe.Text = "Membre";
+            this.labellieuNaiss.Click += new System.EventHandler(this.labellieuNaiss_Click);
             // 
             // txtdesignation
             // 
@@ -90,66 +100,76 @@ namespace ADTMPDapk
             this.txtdesignation.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
             this.txtdesignation.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.txtdesignation.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txtdesignation.Location = new System.Drawing.Point(90, 89);
+            this.txtdesignation.Location = new System.Drawing.Point(64, 81);
             this.txtdesignation.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txtdesignation.Name = "txtdesignation";
             this.txtdesignation.PasswordChar = '\0';
             this.txtdesignation.PlaceholderForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
             this.txtdesignation.PlaceholderText = "designation";
             this.txtdesignation.SelectedText = "";
-            this.txtdesignation.Size = new System.Drawing.Size(257, 36);
+            this.txtdesignation.Size = new System.Drawing.Size(336, 36);
             this.txtdesignation.TabIndex = 43;
+            this.txtdesignation.TextChanged += new System.EventHandler(this.txtdesignation_TextChanged);
             // 
-            // cmbtypemembre
+            // btnactualiser
             // 
-            this.cmbtypemembre.BackColor = System.Drawing.Color.Transparent;
-            this.cmbtypemembre.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            this.cmbtypemembre.DrawMode = System.Windows.Forms.DrawMode.OwnerDrawFixed;
-            this.cmbtypemembre.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cmbtypemembre.FocusedColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbtypemembre.FocusedState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.cmbtypemembre.Font = new System.Drawing.Font("Segoe UI", 10F);
-            this.cmbtypemembre.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(68)))), ((int)(((byte)(88)))), ((int)(((byte)(112)))));
-            this.cmbtypemembre.ItemHeight = 30;
-            this.cmbtypemembre.Items.AddRange(new object[] {
-            "Homme",
-            "Femme"});
-            this.cmbtypemembre.Location = new System.Drawing.Point(90, 22);
-            this.cmbtypemembre.Name = "cmbtypemembre";
-            this.cmbtypemembre.Size = new System.Drawing.Size(255, 36);
-            this.cmbtypemembre.TabIndex = 42;
-            // 
-            // bunifuImageButton1
-            // 
-            this.bunifuImageButton1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btnactualiser.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.bunifuImageButton1.BackColor = System.Drawing.Color.Transparent;
-            this.bunifuImageButton1.Image = global::ADTMPDapk.Properties.Resources.update_left_rotation_96px;
-            this.bunifuImageButton1.ImageActive = null;
-            this.bunifuImageButton1.Location = new System.Drawing.Point(446, 4);
-            this.bunifuImageButton1.Name = "bunifuImageButton1";
-            this.bunifuImageButton1.Size = new System.Drawing.Size(36, 32);
-            this.bunifuImageButton1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.bunifuImageButton1.TabIndex = 43;
-            this.bunifuImageButton1.TabStop = false;
-            this.bunifuImageButton1.Zoom = 10;
+            this.btnactualiser.BackColor = System.Drawing.Color.Transparent;
+            this.btnactualiser.Image = global::ADTMPDapk.Properties.Resources.update_left_rotation_96px;
+            this.btnactualiser.ImageActive = null;
+            this.btnactualiser.Location = new System.Drawing.Point(446, 4);
+            this.btnactualiser.Name = "btnactualiser";
+            this.btnactualiser.Size = new System.Drawing.Size(36, 32);
+            this.btnactualiser.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.btnactualiser.TabIndex = 43;
+            this.btnactualiser.TabStop = false;
+            this.btnactualiser.Zoom = 10;
+            // 
+            // btnenregistrer
+            // 
+            this.btnenregistrer.AnimationHoverSpeed = 0.07F;
+            this.btnenregistrer.AnimationSpeed = 0.03F;
+            this.btnenregistrer.BackColor = System.Drawing.Color.Transparent;
+            this.btnenregistrer.BaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(107)))), ((int)(((byte)(173)))));
+            this.btnenregistrer.BorderColor = System.Drawing.Color.Black;
+            this.btnenregistrer.DialogResult = System.Windows.Forms.DialogResult.None;
+            this.btnenregistrer.FocusedColor = System.Drawing.Color.Empty;
+            this.btnenregistrer.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnenregistrer.ForeColor = System.Drawing.Color.White;
+            this.btnenregistrer.Image = null;
+            this.btnenregistrer.ImageAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnenregistrer.ImageSize = new System.Drawing.Size(20, 20);
+            this.btnenregistrer.Location = new System.Drawing.Point(146, 194);
+            this.btnenregistrer.Name = "btnenregistrer";
+            this.btnenregistrer.OnHoverBaseColor = System.Drawing.Color.FromArgb(((int)(((byte)(151)))), ((int)(((byte)(143)))), ((int)(((byte)(255)))));
+            this.btnenregistrer.OnHoverBorderColor = System.Drawing.Color.Black;
+            this.btnenregistrer.OnHoverForeColor = System.Drawing.Color.White;
+            this.btnenregistrer.OnHoverImage = null;
+            this.btnenregistrer.OnPressedColor = System.Drawing.Color.Black;
+            this.btnenregistrer.Size = new System.Drawing.Size(268, 32);
+            this.btnenregistrer.TabIndex = 44;
+            this.btnenregistrer.Text = "ENREGISTRER";
+            this.btnenregistrer.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.btnenregistrer.Click += new System.EventHandler(this.btnenregistrer_Click);
             // 
             // frm_typemembre
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(494, 200);
-            this.Controls.Add(this.bunifuImageButton1);
+            this.ClientSize = new System.Drawing.Size(494, 232);
+            this.Controls.Add(this.btnenregistrer);
+            this.Controls.Add(this.btnactualiser);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.SizableToolWindow;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "frm_typemembre";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "frm_typemembre";
+            this.Text = "Type Membre";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.bunifuImageButton1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.btnactualiser)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -158,9 +178,9 @@ namespace ADTMPDapk
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label labellieuNaiss;
-        private System.Windows.Forms.Label labelsexe;
         public Guna.UI2.WinForms.Guna2TextBox txtdesignation;
-        public Guna.UI2.WinForms.Guna2ComboBox cmbtypemembre;
-        private Bunifu.Framework.UI.BunifuImageButton bunifuImageButton1;
+        private Bunifu.Framework.UI.BunifuImageButton btnactualiser;
+        public Guna.UI2.WinForms.Guna2TextBox txtid;
+        private Guna.UI.WinForms.GunaButton btnenregistrer;
     }
 }

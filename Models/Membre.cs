@@ -14,7 +14,8 @@ namespace ADTMPDapk.Models
    
         public DateTime dateNaiss { get; set; }
       
-        // public string photo { get; set; }
+        public string photo { get; set; }
+        public string ref_type { get; set; }
 
 
     }
